@@ -4,23 +4,23 @@ export const useArticles = defineStore("articles", () => {
   const articles = ref([
     {
       id: 1,
-      title: "Первая статья",
-      content: "Контент статьи",
+      title: "Как посадить морковь в огороде",
+      content: "Нужно только сделать...",
     },
     {
       id: 2,
-      title: "Вторая статья",
-      content: "Контент статьи",
+      title: "Как собрать урожай моркови",
+      content: "Что посеешь, то пожнешь",
     },
     {
       id: 3,
-      title: "Третья статья",
-      content: "Контент статьи",
+      title: "Как продать морковь на маркетплейсе",
+      content: "Зарегистрируйся на онлайн курс на Skillbox",
     },
   ]);
 
-  function addArticle(a) {
-    articles.value.push(a);
+  function addArticle({ title, content }) {
+    articles.value.push({ title, content, id: articles.value.at(-1).id + 1 });
   }
 
   function getArticle(id) {
